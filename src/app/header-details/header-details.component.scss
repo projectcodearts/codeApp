@@ -1,0 +1,68 @@
+@import "../../assets/css/variables.component.scss";
+@import "../../assets/css/mixins.component.scss";
+@import "../../assets/css/extend.component.scss";
+
+header{
+    @extend .common; @extend .pa; padding: 78px 0 0 32px; z-index: 5; position: relative;
+    &.header-inner{
+        padding: 12px 15px; background-color: $primaryColor;
+        .header-details{
+            min-height: 1px;
+            .logo{
+                width: 93px;
+                img{ width: 100%;}
+            } 
+            .humberger-menu{
+                width: 30px;
+                span{
+                    &:before{
+                        top: -9px;
+                    }
+                    &:after{
+                        top: 9px;
+                    }
+                } 
+            }
+        }
+    } 
+    .header-details{
+        @extend .common; position: relative; min-height: 76px;
+        .humberger-menu{
+            @extend .pa; bottom: 0; margin: auto; width: 40px; height: auto; cursor: pointer;
+            span{
+                @extend .pa; bottom: 0; margin: auto; width: 100%; height: 2px; background-color: $commonColor;
+                &:before{
+                    @extend .pa; bottom: auto; top: -14px; margin: auto; width: 100%; height: 2px; background-color: $commonColor; content: "";
+                }
+                &:after{
+                    @extend .pa; bottom: auto; top: 14px; margin: auto; width: 100%; height: 2px; background-color: $commonColor; content: "";
+                }
+            }
+        }
+        .logo{
+            margin: 0 auto; width: 186px;
+        }
+    }
+    .side-menu{
+        @extend .common; height: 100%; @extend .pa; position: fixed; overflow: auto; @include gradient($primaryColor,$secondaryColor,-45deg,135deg); left: -100%; @include opacity(0);
+        &.open{
+            left: 0%; @include opacity(1);
+        }
+        .logo{ 
+            margin: 100px auto 0; width: 186px; z-index: 2; position: relative;
+        }
+        .menu-details{
+             width: 100%; margin-top: 100px;
+        }
+        ul.details{
+            margin: 0; padding: 0;
+            li{
+                @extend .common; list-style: none; margin: 0 0 20px 0; padding: 0; 
+                a{
+                    text-align: center; color: $commonColor; text-transform: capitalize; font-size: 20px; width: 100%; float: left; letter-spacing: 1px;
+                } 
+            }
+        }
+    }
+
+}

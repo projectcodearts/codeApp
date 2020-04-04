@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Titillium+Web:ital,wght@0,400;0,600;0,900;1,700&display=swap');
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "assets/css/variables.component.scss";
+@import "assets/css/mixins.component.scss";
+/* You can add global styles to this file, and also import other style files */
+
+*{ box-sizing: border-box; margin: 0; padding: 0;}
+body{ margin: 0; padding: 0; font-family: $describeFontuse; color: $defaultColor;}
+a{ text-decoration: none; color: $defaultColor;}
+h1, h2, h3, h4, h5, h6{font-family: $headingFontuse; margin: 0; padding: 0; font-weight: normal;}
+p{font-family: $describeFontuse; margin: 0; padding: 0; font-size: $default-fontsize;} 
+
+section{ width: 100%; float: left; position: relative;}
+.clear{ clear: both;}
+ul{ 
+    margin: 0; padding: 0;
+    li{ list-style: none; margin: 0; padding: 0;}
+}
+
+.common{ 
+    @include common(100%,auto,left);
+}
+
+.custom-button{
+    a{
+        background-color: $primaryColor; color: $commonColor; margin: 0; padding: 10px 30px; border-radius: 100px; text-decoration: none; font-family: $subheadingfont; box-shadow: $primaryColorDark 0 8px 0;
+    }
+    
+}
+
+.others-page-container{
+    @extend .common; padding: 30px 15px 0 15px;
+    .page-title{
+        @extend .common; text-align: center; margin-bottom: 50px;
+    }
+}
+
+.none{ display: none;}
+

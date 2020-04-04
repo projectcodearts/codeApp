@@ -1,0 +1,81 @@
+@mixin position($position,$left,$right,$top,$bottom){
+    position: $position;
+    left: $left;
+    right: $right;
+    top: $top;
+    bottom: $bottom;
+}
+
+@mixin visiblity($value){
+    visibility: $value;
+    -webkit-visibility: $value;
+    -moz-visibility: $value;
+    -o-visibility: $value;
+    -ms-visibility: $value;
+}
+
+
+
+@mixin transform($value-type,$origin,$style){
+    transform: $value-type;
+    -webkit-transform: $value-type;
+    -moz-transform: $value-type;
+    -o-transform: $value-type;
+    transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    transform-style: $style;
+    -webkit-transform-style: $style;
+    -moz-transform-style: $style;
+    -o-transform-style: $style;
+}
+@mixin transition($transition,$duration,$behaviour){
+    transition: $transition $duration $behaviour;
+    -webkit-transition: $transition $duration $behaviour;
+    -moz-transition: $transition $duration $behaviour;
+    -o-transition: $transition $duration $behaviour;
+    -ms-transition: $transition $duration $behaviour;
+}
+@mixin filter($value){
+    filter: $value;
+    -webkit-filter: $value;
+    -moz-filter: $value;
+    -o-filter: $value;
+}
+
+@mixin flex($value){
+    flex: $value;
+    -webkit-flex: $value;
+    -moz-flex: $value;
+    -o-flex: $value;
+    -ms-flex: $value;
+}
+@mixin opacity($value){
+    opacity: $value;
+    filter: Alpha(opacity=$value);
+}
+@mixin animation($name,$time,$fillmode){
+    animation: $name $time $fillmode;
+    -webkit-animation: $name $time $fillmode;
+    -moz-animation: $name $time $fillmode;
+    -o-animation: $name $time $fillmode;
+    -ms-animation: $name $time $fillmode; 
+}
+
+@mixin common($width,$height,$float){
+    width: $width;
+    height: $height;
+    float: $float;
+}
+
+@mixin gradient($colorone,$colortwo,$direction1,$direction2){
+    background: $colorone; 
+    background: -moz-linear-gradient($direction1,  $colorone 0%, $colortwo 100%); 
+    background: -webkit-linear-gradient($direction1,  $colorone 0%,$colortwo 100%); 
+    background: linear-gradient($direction2,  $colorone 0%,$colortwo 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorone', endColorstr='$colortwo',GradientType=1 );
+
+
+    
+}

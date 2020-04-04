@@ -1,0 +1,22 @@
+@import "../../assets/css/variables.component.scss";
+@import "../../assets/css/mixins.component.scss";
+@import "../../assets/css/extend.component.scss";
+footer{
+    @extend .common; @include position(fixed,0,auto,auto,0); background-color: $commonColor; height: 60px; z-index: 1;
+    .details{
+        @extend .common;  box-shadow: rgba(0,0,0,.1) 1px 0 30px;
+        li{
+            @extend .common; width: 16.66666%; 
+            a{
+                 float: left; height: 60px; position: relative; width: 100%; float: left; border-right: #ddd 1px solid; border-top: #ddd 1px solid;
+                 img{
+                    @extend .pa; bottom: 0; right: 0; margin: auto; width: 28px;
+                 }
+                 &.active{ background-color: #ddd;}                 
+            }
+            &:last-child{
+                a{ border: none;}
+            }
+        } 
+    }
+}

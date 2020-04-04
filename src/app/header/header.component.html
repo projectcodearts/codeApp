@@ -1,0 +1,51 @@
+<div *ngIf="router.url === '/home'then homeHeader; else detailsHeader"></div>
+<ng-template #homeHeader>
+    <header>
+        <div class="header-details">
+            <div class="humberger-menu" id="menu-open">
+                <p id="demo"></p>
+                <span></span>
+            </div>        
+            <div class="logo"><a routerLink="/home"><img src="assets/images/logo.png" alt=""></a></div>
+        </div>
+        <div class="side-menu">
+            <div class="logo"><a routerLink="/home"><img src="assets/images/logo.png" alt=""></a></div>
+            <div class="menu-details">
+                <ul class="details">
+                    <li *ngFor="let nav of navigation"><a routerLinkActive="active" routerLink="/{{nav.url}}">{{nav.pagename}}</a>
+                        <ul>
+                            <li *ngFor="let subnav of nav.submenu"><a routerLinkActive="active" routerLink="/{{subnav.url}}">{{subnav.pagename}}</a></li>
+                        </ul>                        
+                    </li>
+                </ul>
+            </div>        
+        </div>
+    </header>
+</ng-template>
+
+<ng-template #detailsHeader>
+    <header class="header-inner">
+        <div class="header-details">
+            <div class="humberger-menu" id="menu-open">
+                <p id="demo"></p>
+                <span></span>
+            </div>        
+            <div class="logo"><a routerLink="/home"><img src="assets/images/logo.png" alt=""></a></div>
+        </div>
+        <div class="side-menu">
+            <div class="logo"><a routerLink="/home"><img src="assets/images/logo.png" alt=""></a></div>
+            <div class="menu-details">
+                <ul class="details">
+                    <li *ngFor="let nav of navigation"><a routerLinkActive="active" routerLink="/{{nav.url}}">{{nav.pagename}}</a>
+                        <ul>
+                            <li *ngFor="let subnav of nav.submenu"><a routerLinkActive="active" routerLink="/{{subnav.url}}">{{subnav.pagename}}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>        
+        </div>
+    </header>
+</ng-template>
+
+
+

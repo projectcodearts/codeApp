@@ -1,0 +1,25 @@
+<div class="home-section">
+    <div class="slider-section">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item" *ngFor="let banner of banners;index as i" [class.active]="i == 0">
+                <div class="portion item">
+                    <div class="content">
+                        <h2>{{banner.name}}</h2>
+                        <div class="clear"></div>
+                        <div class="custom-button"><a href="{{banner.buttonlink}}">{{banner.buttontext}}</a></div>
+                    </div>
+                    <img src="{{banner.image}}" alt="">
+                </div>
+              </div>
+
+
+              <ul class="carousel-indicators">
+                <li data-target="#myCarousel"  *ngFor="let banner of banners let i = index"  ng-class="{active: (i === 0)}" [attr.data-slide-to]="i"></li>
+
+              </ul>
+
+          </div>
+
+    </div>
+</div>
